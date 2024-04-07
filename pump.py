@@ -13,7 +13,7 @@ DELAY = 30
 kb=KBHit()
 
 camip="192.168.4.131"
-pumpip="192.168.4.171"
+pumpip="192.168.4.180"
 #ffplay_vf_args="scale=2*iw:-1, crop=iw/4:ih/4"
 ffplay_vf_args="scale=5*iw:-1, crop=iw/2:ih/2:(in_w-out_w)/2:(in_h-out_h)*3/4"
 USE_REMOTE_TIME=False
@@ -162,7 +162,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Kasa Controller')
     parser.add_argument('delay_mins', metavar='D', type=float, nargs='?', help='A number of minutes to have pump off')
     parser.add_argument('on_mins', metavar='M', type=float, nargs='?', help='A number of minutes to have pump on')
-    parser.add_argument("--ip_address", type=str, default="192.168.4.171", help="IP address of the Kasa plug")
+    parser.add_argument("--ip_address", type=str, default=pumpip, help="IP address of the Kasa plug")
     parser.add_argument('--startoff', action='store_true', help='Start off')
     parser.add_argument('--dryrun', action='store_true', help='Run in dry-run mode (print commands instead of executing)')
     parser.add_argument('--showcam', action='store_true', help='Open a window with a live video feed')
